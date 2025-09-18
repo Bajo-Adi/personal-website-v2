@@ -63,15 +63,14 @@ const Skills = () => {
       <div className="flex-col font-body flex px-5 text-lg max-w-4xl mb-8">
         <span className="font-header text-4xl font-bold px-[3rem] text-white">Skills</span>
         <span className="mt-10 font-body text-xl font-light text-start px-[3rem] text-gray-300">
-          I started coding in the 6th grade, and over the years, I&apos;ve developed
-          a deep passion for building impactful projects. Through continuous
-          learning and experimentation, I&apos;ve gained experience in full-stack
-          mobile and app development, as well as RAG LLM solutions.
+        Starting with a curiosity for coding in my early years, I’ve grown into building projects 
+        that combine advanced machine learning with solid backend architectures. My work spans from 
+        training and fine-tuning variety of models <span className="font-semibold">(Vision, Language, Multimodal, Time Series)</span> to designing APIs 
+        and managing databases, allowing me to craft solutions that are not only intelligent but 
+        also reliable, efficient, and user-facing.
         </span>
         <span className="mt-8 font-body text-xl font-light text-start px-[3rem] text-gray-300">
-          My journey has involved integrating these technologies, allowing me to
-          create robust, data-driven applications that leverage modern AI
-          advancements.
+          Here is an insight into my Tech Toolkit:
         </span>
       </div>
       <div className="w-full max-w-6xl">
