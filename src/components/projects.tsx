@@ -174,7 +174,18 @@ const Projects = () => {
                 />
               );
             }
-            return <BentoCard key={feature.name} {...feature} />;
+            return (
+              <BentoCard 
+                key={feature.name} 
+                name={feature.name}
+                description={feature.description}
+                href={feature.href}
+                cta={feature.cta}
+                className={feature.className}
+                Icon={feature.Icon}
+                background={feature.background}
+              />
+            );
           })}
         </BentoGrid>
       </div>
