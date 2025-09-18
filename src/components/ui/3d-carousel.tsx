@@ -125,18 +125,16 @@ const Carousel = memo(
       (value) => `rotate3d(0, 1, 0, ${value}deg)`
     )
     
-    // Create opacity transforms for each skill
-    const opacityTransforms = useMemo(() => {
-      return skills.map((_, i) => {
-        const baseRotationAngle = i * (360 / faceCount);
-        return useTransform(rotation, (currentRotation) => {
-          const totalAngle = baseRotationAngle + currentRotation;
-          const normalizedAngle = Math.abs(totalAngle % 360);
-          const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
-          return Math.max(0, 1 - (distanceFromFront / 90)); // Fade out over 90 degrees
-        });
+    // Create opacity transforms for each skill at component level
+    const opacityTransforms = skills.map((_, i) => {
+      const baseRotationAngle = i * (360 / faceCount);
+      return useTransform(rotation, (currentRotation) => {
+        const totalAngle = baseRotationAngle + currentRotation;
+        const normalizedAngle = Math.abs(totalAngle % 360);
+        const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+        return Math.max(0, 1 - (distanceFromFront / 90)); // Fade out over 90 degrees
       });
-    }, [skills, faceCount, rotation]);
+    });
 
     // Create rendered icons the same way as icon-cloud
     const renderedIcons = useMemo(() => {
