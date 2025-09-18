@@ -31,18 +31,18 @@ const Contact = () => {
             Back to Top
           </Button>
         </div>
-        <span className="font-body mt-8 text-gray-300">
+        <span className="font-body mt-6 sm:mt-8 text-gray-300">
         Every journey offers something new to learn, and I’m always curious 
         to hear different perspectives. If you’d like to collaborate on a project,
          share ideas, or explore new opportunities, 
          I’d be glad to connect and see where our paths align.
         </span>
-        <span className="font-body mt-8 text-gray-300">
+        <span className="font-body mt-6 sm:mt-8 text-gray-300">
           Email me at{" "}
           <span className="font-semibold text-white">abajoria3@gatech.edu</span> or
           connect with me on the following platforms
         </span>
-        <div className="flex gap-x-8 mt-20 font-body">
+        <div className="flex gap-x-4 sm:gap-x-8 mt-12 sm:mt-20 font-body">
           <Button className="flex gap-x-3">
             <Link
               href={`https://www.linkedin.com/in/abajoria04/`}

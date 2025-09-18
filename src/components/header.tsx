@@ -8,10 +8,15 @@ import {
   Github,
   Linkedin,
   Briefcase,
-  FileText
+  FileText,
+  Menu,
+  X
 } from "lucide-react";
+import { useState } from "react";
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(`#${sectionId}`) as HTMLElement;
     if (element) {
@@ -88,21 +93,56 @@ const Header = () => {
   ];
 
   return (
-    <div className="z-20 w-full sticky top-0 flex items-center justify-center px-5 h-20 font-header bg-neutral-950/80 backdrop-blur-sm shadow-lg border-b border-white/10">
-      <Dock className="items-center">
-        {navigationItems.map((item, idx) => (
-          <DockItem
-            key={idx}
-            className="aspect-square rounded-full transition-colors"
-            onClick={item.onClick}
-          >
-            <DockLabel alwaysVisible={true}>
-              {item.title}
-            </DockLabel>
-            <DockIcon>{item.icon}</DockIcon>
-          </DockItem>
-        ))}
-      </Dock>
+    <div className="z-20 w-full sticky top-0 flex items-center justify-between px-5 h-20 font-header bg-neutral-950/80 backdrop-blur-sm shadow-lg border-b border-white/10">
+      {/* Desktop Navigation */}
+      <div className="hidden lg:flex items-center justify-center flex-1">
+        <Dock className="items-center">
+          {navigationItems.map((item, idx) => (
+            <DockItem
+              key={idx}
+              className="aspect-square rounded-full transition-colors"
+              onClick={item.onClick}
+            >
+              <DockLabel alwaysVisible={true}>
+                {item.title}
+              </DockLabel>
+              <DockIcon>{item.icon}</DockIcon>
+            </DockItem>
+          ))}
+        </Dock>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div className="lg:hidden flex items-center justify-between w-full">
+        <div className="text-white font-bold text-lg">Portfolio</div>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 top-20 bg-neutral-950/95 backdrop-blur-sm z-10">
+          <div className="flex flex-col items-center justify-center h-full space-y-8">
+            {navigationItems.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  item.onClick();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex items-center space-x-3 text-white hover:text-blue-400 transition-colors text-lg"
+              >
+                {item.icon}
+                <span>{item.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -150,18 +150,18 @@ const Skills = () => {
 
   return (
     <div id="skills" className="mt-8 flex flex-col relative items-center p-5 justify-start h-[80vh] bg-neutral-950 mb-16">
-      <div className="flex-col font-body flex px-5 text-lg max-w-4xl mb-8">
+      <div className="flex-col font-body flex px-4 sm:px-5 text-lg max-w-4xl mb-8">
         <div className="text-center mb-6 pt-1 max-w-3xl mx-auto">
           <h2 className="text-4xl font-medium text-white">Skills</h2>
         </div>
-        <span className="mt-2 font-body text-xl font-light text-start px-[3rem] text-gray-300">
+        <span className="mt-2 font-body text-lg sm:text-xl font-light text-start px-4 sm:px-8 lg:px-[3rem] text-gray-300">
         Starting with a curiosity for coding in my early years, I’ve grown into building projects 
         that combine advanced machine learning with solid backend architectures. My work spans from 
         <span className="font-semibold text-blue-400"> training and fine-tuning variety of models (Vision, Language, Multimodal, Time Series)</span> to designing APIs 
         and managing databases, allowing me to craft solutions that are not only intelligent but 
         also reliable, efficient, and user-facing.
         </span>
-        <span className="mt-8 font-body text-xl font-light text-start px-[3rem] text-gray-300">
+        <span className="mt-8 font-body text-lg sm:text-xl font-light text-start px-4 sm:px-8 lg:px-[3rem] text-gray-300">
           Here is an insight into my Tech Toolkit:
         </span>
       </div>
@@ -207,7 +207,7 @@ const Skills = () => {
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {Object.entries(skillCategories).map(([categoryName, categorySkills], categoryIndex) => (
                   <motion.div
                     key={categoryName}

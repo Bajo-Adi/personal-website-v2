@@ -25,7 +25,7 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[400px] h-[650px] cursor-pointer">
+    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[300px] sm:w-[350px] lg:w-[400px] h-[500px] sm:h-[600px] lg:h-[650px] cursor-pointer">
       <div 
         className={cn(
           "relative h-full transition-transform duration-700 transform-style-preserve-3d",
@@ -46,7 +46,7 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
         
         {/* Front side - Image */}
         <div className="absolute inset-0 backface-hidden">
-          <div className="relative h-full flex items-center justify-center p-6">
+          <div className="relative h-full flex items-center justify-center p-4 sm:p-6">
             <Image
               src={imageSrc}
               alt={`${name} Image`}
@@ -58,7 +58,7 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
         </div>
         
         {/* Back side - Content */}
-        <div className="absolute inset-0 backface-hidden rotate-y-180 p-6 flex flex-col">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 p-4 sm:p-6 flex flex-col">
           <div className="space-y-6 flex-1">
             <div className="space-y-4">
               <GradientText
@@ -75,7 +75,7 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
 
             <div className="flex justify-center items-center h-[64px]">
               {href && cta && (
-                <button className="w-full py-3 px-4 text-xl rounded-xl bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800 border border-blue-500 text-white">
+                <button className="w-full py-3 px-4 text-lg sm:text-xl rounded-xl bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800 border border-blue-500 text-white">
                   <a href={href} target="_blank" rel="noopener noreferrer" className="block">
                     {cta}
                   </a>
@@ -494,7 +494,7 @@ export default function ProjectsHorizontal() {
               className="overflow-x-auto scrollbar-hide"
               onScroll={checkScrollButtons}
             >
-              <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+              <div className="flex gap-4 sm:p-6 pb-4" style={{ width: 'max-content' }}>
                 {currentData.map((item: any, index: number) => (
                 <TimelineContent
                   key={item.name}
@@ -514,8 +514,8 @@ export default function ProjectsHorizontal() {
                       features={item.features}
                     />
                   ) : (
-                    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[400px] h-[650px]">
-                      <div className="relative h-full p-6 flex flex-col">
+                    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[300px] sm:w-[350px] lg:w-[400px] h-[500px] sm:h-[600px] lg:h-[650px]">
+                      <div className="relative h-full p-4 sm:p-6 flex flex-col">
                         <GlowingEffect
                           spread={40}
                           glow={true}
@@ -555,7 +555,7 @@ export default function ProjectsHorizontal() {
                             <>
                               {item.href && item.cta && (
                                 <div className="flex justify-center">
-                                  <button className="w-full py-3 px-4 text-xl rounded-xl bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800 border border-blue-500 text-white">
+                                  <button className="w-full py-3 px-4 text-lg sm:text-xl rounded-xl bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800 border border-blue-500 text-white">
                                     <a href={item.href} target="_blank" rel="noopener noreferrer" className="block">
                                       {item.cta}
                                     </a>
@@ -582,7 +582,7 @@ export default function ProjectsHorizontal() {
                             <>
                               <div className="flex justify-center items-center h-[64px]">
                                 {item.href && item.cta && (
-                                  <button className="w-full py-3 px-4 text-xl rounded-xl bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800 border border-blue-500 text-white">
+                                  <button className="w-full py-3 px-4 text-lg sm:text-xl rounded-xl bg-gradient-to-t from-blue-500 to-blue-600 shadow-lg shadow-blue-800 border border-blue-500 text-white">
                                     <a href={item.href} target="_blank" rel="noopener noreferrer" className="block">
                                       {item.cta}
                                     </a>

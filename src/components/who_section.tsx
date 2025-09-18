@@ -40,9 +40,9 @@ const WhoAmI = () => {
   return (
     <div id="about-me" className="bg-black pt-20">
       <div ref={targetRef} className="relative z-0 h-[200vh]">
-        <div className="sticky top-20 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center h-[80vh] max-w-7xl bg-transparent px-[1rem] py-[2rem] space-y-8 lg:space-y-0 lg:space-x-12">
+        <div className="sticky top-20 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center h-[80vh] max-w-7xl bg-transparent px-4 py-4 lg:px-[1rem] lg:py-[2rem] space-y-6 lg:space-y-0 lg:space-x-12">
           <div className="flex-1 max-w-2xl">
-            <p className="flex flex-wrap p-2 font-header text-4xl font-bold text-black/5 dark:text-white/20 md:p-4 lg:p-6">
+            <p className="flex flex-wrap p-2 font-header text-2xl sm:text-3xl lg:text-4xl font-bold text-black/5 dark:text-white/20 md:p-4 lg:p-6">
               {words.map((word, i) => {
                 const start = i / words.length;
                 const end = start + 1 / words.length;
@@ -53,8 +53,8 @@ const WhoAmI = () => {
                 );
               })}
             </p>
-            <div className="px-[1rem] lg:px-[3rem] mt-6">
-              <span className="font-body text-xl font-light text-start text-gray-300 block">
+            <div className="px-2 sm:px-4 lg:px-[3rem] mt-6">
+              <span className="font-body text-lg sm:text-xl font-light text-start text-gray-300 block">
                 I&apos;m an engineer, researcher, and builder at heart, fascinated by intelligence in all its forms:
                 artificial, human, and collective. I am a senior at <span className="font-semibold text-blue-400">Georgia Tech</span>, 
                 pursuing a <span className="font-semibold text-blue-400">B.S. in Computer Science</span> with concentrations in 
@@ -65,7 +65,7 @@ const WhoAmI = () => {
                 Guided by curiosity and driven by impact, I focus on creating technology that is innovative, 
                 reliable, and built to scale.
               </span>
-              <span className="font-body text-xl font-light text-start text-gray-300 mt-4 block">
+              <span className="font-body text-lg sm:text-xl font-light text-start text-gray-300 mt-4 block">
                 Keep scrolling and learn more about what I have been working on ...
               </span>
               <div className="flex gap-4 mt-8">

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Resume = () => {
   return (
     <div id="resume" className="mt-8 flex flex-col relative items-center p-1 justify-start min-h-[100vh] bg-neutral-950">
-      <div className="flex-col font-body flex px-5 text-lg max-w-6xl mb-8">
+      <div className="flex-col font-body flex px-4 sm:px-5 text-lg max-w-6xl mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,15 +22,16 @@ const Resume = () => {
           viewport={{ once: true }}
           className="mt-2 w-full"
         >
-          <div className="bg-white/5 rounded-2xl border border-white/20 p-6 shadow-2xl w-full">
-            <div className="w-full overflow-auto max-h-[800px] rounded-lg">
+          <div className="bg-white/5 rounded-2xl border border-white/20 p-4 sm:p-6 shadow-2xl w-full flex justify-center">
+            <div className="overflow-auto rounded-lg bg-white">
               <iframe
-                src="https://drive.google.com/file/d/1LHbRGDOmrW63ZlKkDhWsoHSOk0Gk4ziF/preview"
+                src="https://drive.google.com/file/d/1LHbRGDOmrW63ZlKkDhWsoHSOk0Gk4ziF/preview?usp=sharing&embedded=true"
                 width="1000"
                 height="800"
-                className="rounded-lg"
+                className="rounded-lg border-0"
                 title="Resume"
                 allow="autoplay"
+                style={{ border: 'none' }}
               />
             </div>
           </div>
