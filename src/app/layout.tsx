@@ -15,8 +15,8 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Ayush Gharat",
-  description: "This is Ayush Gharat",
+  title: "Aditya Bajoria",
+  description: "This is Aditya Bajoria",
 };
 
 export default function RootLayout({
@@ -27,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body className={`${syne.variable} ${raleway.variable}`}>
         {children}

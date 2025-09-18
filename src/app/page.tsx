@@ -19,7 +19,7 @@ export default function Home() {
   // };
 
   return (
-    <main className='h-full font-mono'>
+    <main className='h-full font-mono bg-neutral-950'>
       <div>
         <Header/>
         <Homepage/>

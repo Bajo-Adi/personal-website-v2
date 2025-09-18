@@ -3,6 +3,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const BentoGrid = ({
   children,
@@ -12,14 +13,12 @@ const BentoGrid = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={cn(
-        "grid w-full auto-rows-[11rem] grid-cols-3 gap-8",
-        className,
-      )}
-    >
+    <ul className={cn(
+      "grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-4 lg:gap-4 xl:grid-rows-4",
+      className,
+    )}>
       {children}
-    </div>
+    </ul>
   );
 };
 
@@ -37,43 +36,55 @@ const BentoCard = ({
   background: ReactNode;
   Icon: any;
   description: string;
-  href: string;
-  cta: string;
+  href?: string;
+  cta?: string;
 }) => (
-  <div
-    key={name}
-    className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
-      // light styles
-      "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-      // dark styles
-      "transform-gpu dark:bg-black dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
-      className,
-    )}
-  >
-    <div>{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
-      <Icon className="h-8 w-8 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
-      <h3 className="text-xl font-header font-semibold text-neutral-700 dark:text-neutral-300">
-        {name}
-      </h3>
-      <p className="max-w-lg font-body text-sm text-neutral-400">{description}</p>
+  <li className={cn("min-h-[18rem] list-none", className)}>
+    <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-white/20 p-2 md:rounded-[1.5rem] md:p-3">
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={3}
+        variant="white"
+        className="z-20"
+      />
+      <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-white/20 bg-neutral-900 p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+        {background}
+        <div className="relative flex flex-1 flex-col justify-between gap-3">
+          <div className="w-fit rounded-lg border-[0.75px] border-white/20 bg-white/10 p-2">
+            <Icon className="h-4 w-4 text-white" />
+          </div>
+          <div className="space-y-3">
+            <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-white">
+              {name}
+            </h3>
+            <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-gray-300">
+              {description}
+            </h2>
+          </div>
+        </div>
+        
+        {href && cta && (
+          <div className="flex justify-end">
+            <Button 
+              variant="ghost" 
+              asChild 
+              size="sm" 
+              className="pointer-events-auto font-body bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-lg"
+            >
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                {cta}
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
-
-    <div
-      className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
-      )}
-    >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto font-body">
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          {cta}
-          <ArrowRightIcon className="ml-2 h-4 w-4" />
-        </a>
-      </Button>
-    </div>
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-  </div>
+  </li>
 );
 
 export { BentoCard, BentoGrid };

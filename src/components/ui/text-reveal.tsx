@@ -34,7 +34,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
         <p
           ref={targetRef}
           className={
-            "flex flex-wrap p-5 text-2xl font-bold text-black/5 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl"
+            "flex flex-wrap p-5 font-header text-4xl font-bold text-black/5 dark:text-white/20 md:p-8 lg:p-10"
           }
         >
           {words.map((word, i) => {
@@ -47,24 +47,41 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
             );
           })}
         </p>
-        <span className="font-body text-2xl text-start px-[3rem]">
-          I am a CS Junior at Georgia Tech passionate about building modern,
-          ambitious tools that can positively impact people.
+        <span className="font-body text-xl font-light text-start px-[3rem] text-gray-300">
+        I'm an engineer, researcher, and builder at heart, fascinated by intelligence in all its forms:
+         artificial, human, and collective. I enjoy turning complex problems into elegant, 
+         usable solutions, from scalable backend systems to advanced AI models and ambitious product ideas. 
+         Guided by curiosity and driven by impact, I focus on creating technology that is innovative, 
+         reliable, and built to scale.
         </span>
-        <RainbowButton className="mt-8 ms-[3rem] font-body">
-          <Link
-            href="https://www.linkedin.com/in/ayush-gharat/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit LinkedIn profile"
-          >
-            Let&apos;s connect
-          </Link>
-        </RainbowButton>
+        <br />
+        <span className="font-body text-xl font-light text-start px-[3rem] text-gray-300 mt-4">
+         Keep scrolling and learn more about what I have been working on ...
+        </span>
+        <div className="flex gap-4 mt-8 ms-[3rem]">
+          <RainbowButton className="font-body text-sm font-medium">
+            <Link
+              href="https://www.linkedin.com/in/abajoria04/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit LinkedIn profile"
+            >
+              Let&apos;s connect
+            </Link>
+          </RainbowButton>
+          
+          <RainbowButton className="font-body text-sm font-medium">
+            <Link
+              href="https://drive.google.com/file/d/1LHbRGDOmrW63ZlKkDhWsoHSOk0Gk4ziF/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Resume"
+            >
+              Resume
+            </Link>
+          </RainbowButton>
+        </div>
 
-        <span className="mt-12 font-body text-xl font-light text-start px-[3rem]">
-          Or keep scrolling and learn more about what I have been working on ...
-        </span>
       </div>
     </div>
   );
@@ -80,10 +97,10 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className="xl:lg-3 relative mx-1 lg:mx-2.5">
-      <span className={"absolute opacity-30"}>{children}</span>
+      <span className={"absolute opacity-30 text-white"}>{children}</span>
       <motion.span
         style={{ opacity: opacity }}
-        className={"text-black dark:text-white"}
+        className={"text-white"}
       >
         {children}
       </motion.span>
