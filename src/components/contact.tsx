@@ -47,8 +47,8 @@ const Contact = () => {
             <Link
               href={`https://www.linkedin.com/in/abajoria04/`}
               className="flex gap-x-3"
-              target="_blank"
-              rel="noopener noreferrer"
+              
+              
             >
               <FaLinkedin size={16} />
               LinkedIn
@@ -58,23 +58,25 @@ const Contact = () => {
             <Link
               href={`https://github.com/Bajo-Adi`}
               className="flex gap-x-3"
-              target="_blank"
-              rel="noopener noreferrer"
+              
+              
             >
               <FaGithub size={16} />
               Github
             </Link>
           </Button>
-          <Button className="flex gap-x-3" variant={`secondary`}>
-            <Link
-              href={`https://drive.google.com/file/d/1LHbRGDOmrW63ZlKkDhWsoHSOk0Gk4ziF/view?usp=sharing`}
-              className="flex gap-x-3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaRegFilePdf size={16} />
-              Resume
-            </Link>
+          <Button 
+            onClick={() => {
+              const resumeSection = document.getElementById('resume');
+              if (resumeSection) {
+                resumeSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="flex gap-x-3" 
+            variant={`secondary`}
+          >
+            <FaRegFilePdf size={16} />
+            Resume
           </Button>
         </div>
       </div>

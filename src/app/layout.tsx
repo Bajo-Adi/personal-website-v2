@@ -1,17 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Syne, Raleway } from "next/font/google";
+import { Manrope } from "next/font/google";
 
-const syne = Syne({
+const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-syne",
-});
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-raleway",
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +25,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
-      <body className={`${syne.variable} ${raleway.variable}`}>
+      <body className={`${manrope.variable} mt-4`}>
         {children}
       </body>
     </html>

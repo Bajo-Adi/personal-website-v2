@@ -2,7 +2,8 @@
 import { FC, ReactNode, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { RainbowButton } from "./ui/rainbow-button";
+import { Button } from "./ui/sliding-button";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 interface WordProps {
@@ -15,7 +16,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className="xl:lg-3 relative mx-1 lg:mx-2.5">
-      <span className={"absolute opacity-30 text-white"}>{children}</span>
+      <span className={"absolute opacity-30 text-black"}>{children}</span>
       <motion.span
         style={{ opacity: opacity }}
         className={"text-white"}
@@ -55,7 +56,11 @@ const WhoAmI = () => {
             <div className="px-[1rem] lg:px-[3rem] mt-6">
               <span className="font-body text-xl font-light text-start text-gray-300 block">
                 I&apos;m an engineer, researcher, and builder at heart, fascinated by intelligence in all its forms:
-                artificial, human, and collective. I enjoy turning complex problems into elegant, 
+                artificial, human, and collective. I am a senior at <span className="font-semibold text-blue-400">Georgia Tech</span>, 
+                pursuing a <span className="font-semibold text-blue-400">B.S. in Computer Science</span> with concentrations in 
+                 <span className="font-semibold text-blue-400"> AI and Modelling and Simulations</span>,
+                 seeking <span className="font-semibold text-blue-400">Machine Learning Engineer</span> roles. 
+                 I enjoy turning complex problems into elegant, 
                 usable solutions, from scalable backend systems to advanced AI models and ambitious product ideas. 
                 Guided by curiosity and driven by impact, I focus on creating technology that is innovative, 
                 reliable, and built to scale.
@@ -64,27 +69,37 @@ const WhoAmI = () => {
                 Keep scrolling and learn more about what I have been working on ...
               </span>
               <div className="flex gap-4 mt-8">
-                <RainbowButton className="font-body text-sm font-medium">
+                <Button asChild className="group relative overflow-hidden rounded-full font-body text-sm font-medium bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8,#3b82f6,#60a5fa)] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))] bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8,#3b82f6,#60a5fa)] dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8,#3b82f6,#60a5fa)]">
                   <Link
                     href="https://www.linkedin.com/in/abajoria04/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit LinkedIn profile"
+                    className="relative inline-flex items-center gap-x-2 pr-14"
                   >
-                    Let&apos;s connect
+                    <span className="transition-opacity duration-500 group-hover:opacity-0">Let&apos;s connect</span>
+                    <i className="absolute right-1 top-1 bottom-1 rounded-sm z-10 grid w-1/4 place-items-center transition-all duration-500 bg-primary-foreground/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                      <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+                    </i>
                   </Link>
-                </RainbowButton>
-                
-                <RainbowButton className="font-body text-sm font-medium">
-                  <Link
-                    href="https://drive.google.com/file/d/1LHbRGDOmrW63ZlKkDhWsoHSOk0Gk4ziF/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View Resume"
-                  >
-                    Resume
-                  </Link>
-                </RainbowButton>
+                </Button>
+
+                <Button 
+                  onClick={() => {
+                    const resumeSection = document.getElementById('resume');
+                    if (resumeSection) {
+                      resumeSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="group relative overflow-hidden rounded-full font-body text-sm font-medium bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8,#3b82f6,#60a5fa)] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))] bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8,#3b82f6,#60a5fa)] dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,#60a5fa,#2563eb,#1d4ed8,#3b82f6,#60a5fa)]"
+                >
+                  <div className="relative inline-flex items-center gap-x-2 pr-14">
+                    <span className="transition-opacity duration-500 group-hover:opacity-0">Resume</span>
+                    <i className="absolute right-1 top-1 bottom-1 rounded-sm z-10 grid w-1/4 place-items-center transition-all duration-500 bg-primary-foreground/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                      <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+                    </i>
+                  </div>
+                </Button>
               </div>
             </div>
           </div>

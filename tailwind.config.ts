@@ -13,10 +13,10 @@ const config: Config = {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
-  		fontFamily: {
-  			header: ['var(--font-syne)'],
-  			body: ['var(--font-raleway)']
-  		},
+    		fontFamily: {
+				header: ['var(--font-manrope)'],
+				body: ['var(--font-manrope)']
+			},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -72,7 +72,8 @@ const config: Config = {
   		animation: {
   			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
   			rainbow: 'rainbow var(--speed, 2s) infinite linear',
-  			grid: 'grid 15s linear infinite'
+  			grid: 'grid 15s linear infinite',
+  			gradient: 'gradient var(--animation-duration, 8s) linear infinite'
   		},
   		keyframes: {
   			ripple: {
@@ -98,6 +99,11 @@ const config: Config = {
   				'100%': {
   					transform: 'translateY(0)'
   				}
+  			},
+  			gradient: {
+  				'0%': { backgroundPosition: '0% 50%' },
+  				'50%': { backgroundPosition: '100% 50%' },
+  				'100%': { backgroundPosition: '0% 50%' }
   			}
   		}
   	}

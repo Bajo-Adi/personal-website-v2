@@ -2,6 +2,7 @@ import Contact from '@/components/contact'
 import Header from '@/components/header'
 import Homepage from '@/components/homepage'
 import Projects from '@/components/projects'
+import Resume from '@/components/resume'
 import Skills from '@/components/skills'
 import WhoAmI from '@/components/who_section'
 import Image from 'next/image'
@@ -24,6 +25,7 @@ export default function Home() {
         <Header/>
         <Homepage/>
         <WhoAmI/>
+        <Resume/>
         <Skills/>
         <Projects/>
         {/* <Aspirations/> */}

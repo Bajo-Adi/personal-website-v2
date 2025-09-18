@@ -212,9 +212,9 @@ const Carousel = memo(
       >
         {/* Left Arrow */}
         <button
-          onClick={() => rotateBy(-3)}
+          onClick={() => rotateBy(3)}
           className="absolute left-2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-105"
-          aria-label="Rotate left"
+          aria-label="Show more icons on the left"
         >
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -223,9 +223,9 @@ const Carousel = memo(
 
         {/* Right Arrow */}
         <button
-          onClick={() => rotateBy(3)}
+          onClick={() => rotateBy(-3)}
           className="absolute right-2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-105"
-          aria-label="Rotate right"
+          aria-label="Show more icons on the right"
         >
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-sparkles-color: var(----sparkles-color);
+  --color-gradient-color: var(----gradient-color);
+}
+
+:root {
+  --gradient-color: #8350e8;
+  --sparkles-color: #8350e8;
+}
+
+.dark {
+  --gradient-color: #8350e8;
+  --sparkles-color: #ffffff;
+}

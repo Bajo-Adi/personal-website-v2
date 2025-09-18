@@ -6,7 +6,9 @@ import {
   FolderOpen, 
   Mail,
   Github,
-  Linkedin
+  Linkedin,
+  Briefcase,
+  FileText
 } from "lucide-react";
 
 const Header = () => {
@@ -17,6 +19,20 @@ const Header = () => {
         top: element.offsetTop,
         behavior: "smooth",
       });
+    }
+  };
+
+  const scrollToProjects = (toggleValue: string) => {
+    const element = document.querySelector(`#projects`) as HTMLElement;
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth",
+      });
+      // Dispatch custom event to toggle the projects switch
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('toggleProjects', { detail: toggleValue }));
+      }, 500);
     }
   };
 
@@ -34,9 +50,21 @@ const Header = () => {
       isInternal: true,
     },
     {
+      title: "Resume",
+      icon: <FileText className="h-7 w-7 text-white" />,
+      onClick: () => scrollToSection("resume"),
+      isInternal: true,
+    },
+    {
       title: "Projects",
       icon: <FolderOpen className="h-7 w-7 text-white" />,
-      onClick: () => scrollToSection("projects"),
+      onClick: () => scrollToProjects("0"),
+      isInternal: true,
+    },
+    {
+      title: "Experiences",
+      icon: <Briefcase className="h-7 w-7 text-white" />,
+      onClick: () => scrollToProjects("1"),
       isInternal: true,
     },
     {
@@ -65,7 +93,7 @@ const Header = () => {
         {navigationItems.map((item, idx) => (
           <DockItem
             key={idx}
-            className="aspect-square rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="aspect-square rounded-full transition-colors"
             onClick={item.onClick}
           >
             <DockLabel alwaysVisible={true}>
