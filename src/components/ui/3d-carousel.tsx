@@ -126,7 +126,7 @@ const Carousel = memo(
     )
     
     // Create individual opacity transforms for each skill (up to 16 skills max)
-    const opacityTransform0 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform0 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 0 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -134,7 +134,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform1 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform1 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 1 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -142,7 +142,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform2 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform2 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 2 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -150,7 +150,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform3 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform3 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 3 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -158,7 +158,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform4 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform4 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 4 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -166,7 +166,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform5 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform5 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 5 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -174,7 +174,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform6 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform6 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 6 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -182,7 +182,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform7 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform7 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 7 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -190,7 +190,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform8 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform8 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 8 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -198,7 +198,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform9 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform9 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 9 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -206,7 +206,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform10 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform10 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 10 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -214,7 +214,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform11 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform11 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 11 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -222,7 +222,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform12 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform12 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 12 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -230,7 +230,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform13 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform13 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 13 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -238,7 +238,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform14 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform14 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 14 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
@@ -246,7 +246,7 @@ const Carousel = memo(
       return Math.max(0, 1 - (distanceFromFront / 90));
     });
     
-    const opacityTransform15 = useTransform(rotation, (currentRotation) => {
+    const opacityTransform15 = useTransform(rotation, (currentRotation: number) => {
       const baseRotationAngle = 15 * (360 / faceCount);
       const totalAngle = baseRotationAngle + currentRotation;
       const normalizedAngle = Math.abs(totalAngle % 360);
