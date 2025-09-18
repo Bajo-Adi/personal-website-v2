@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useEffect, useLayoutEffect, useMemo, useState } from "react"
+import { memo, useEffect, useLayoutEffect, useMemo, useState, useCallback } from "react"
 import {
   AnimatePresence,
   motion,
@@ -126,14 +126,14 @@ const Carousel = memo(
     )
     
     // Create opacity transform for each element
-    const createOpacityTransform = (baseAngle: number) => {
+    const createOpacityTransform = useCallback((baseAngle: number) => {
       return useTransform(rotation, (currentRotation) => {
         const totalAngle = baseAngle + currentRotation;
         const normalizedAngle = Math.abs(totalAngle % 360);
         const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
         return Math.max(0, 1 - (distanceFromFront / 90)); // Fade out over 90 degrees
       });
-    };
+    }, [rotation]);
 
     // Create rendered icons the same way as icon-cloud
     const renderedIcons = useMemo(() => {
@@ -318,6 +318,8 @@ const Carousel = memo(
     )
   }
 )
+
+Carousel.displayName = 'Carousel';
 
 function ThreeDPhotoCarousel({ skills }: { skills?: { slug: string; name: string }[] }) {
   const [activeSkill, setActiveSkill] = useState<string | null>(null)

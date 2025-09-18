@@ -54,7 +54,7 @@ const WhoAmI = () => {
             </p>
             <div className="px-[1rem] lg:px-[3rem] mt-6">
               <span className="font-body text-xl font-light text-start text-gray-300 block">
-                I'm an engineer, researcher, and builder at heart, fascinated by intelligence in all its forms:
+                I&apos;m an engineer, researcher, and builder at heart, fascinated by intelligence in all its forms:
                 artificial, human, and collective. I enjoy turning complex problems into elegant, 
                 usable solutions, from scalable backend systems to advanced AI models and ambitious product ideas. 
                 Guided by curiosity and driven by impact, I focus on creating technology that is innovative, 

@@ -63,9 +63,9 @@ const Skills = () => {
       <div className="flex-col font-body flex px-5 text-lg max-w-4xl mb-8">
         <span className="font-header text-4xl font-bold px-[3rem] text-white">Skills</span>
         <span className="mt-10 font-body text-xl font-light text-start px-[3rem] text-gray-300">
-          I started coding in the 6th grade, and over the years, I've developed
+          I started coding in the 6th grade, and over the years, I&apos;ve developed
           a deep passion for building impactful projects. Through continuous
-          learning and experimentation, I've gained experience in full-stack
+          learning and experimentation, I&apos;ve gained experience in full-stack
           mobile and app development, as well as RAG LLM solutions.
         </span>
         <span className="mt-8 font-body text-xl font-light text-start px-[3rem] text-gray-300">
