@@ -125,16 +125,141 @@ const Carousel = memo(
       (value) => `rotate3d(0, 1, 0, ${value}deg)`
     )
     
-    // Create opacity transforms for each skill at component level
-    const opacityTransforms = skills.map((_, i) => {
-      const baseRotationAngle = i * (360 / faceCount);
-      return useTransform(rotation, (currentRotation) => {
-        const totalAngle = baseRotationAngle + currentRotation;
-        const normalizedAngle = Math.abs(totalAngle % 360);
-        const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
-        return Math.max(0, 1 - (distanceFromFront / 90)); // Fade out over 90 degrees
-      });
+    // Create individual opacity transforms for each skill (up to 16 skills max)
+    const opacityTransform0 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 0 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
     });
+    
+    const opacityTransform1 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 1 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform2 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 2 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform3 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 3 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform4 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 4 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform5 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 5 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform6 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 6 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform7 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 7 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform8 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 8 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform9 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 9 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform10 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 10 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform11 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 11 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform12 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 12 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform13 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 13 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform14 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 14 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+    
+    const opacityTransform15 = useTransform(rotation, (currentRotation) => {
+      const baseRotationAngle = 15 * (360 / faceCount);
+      const totalAngle = baseRotationAngle + currentRotation;
+      const normalizedAngle = Math.abs(totalAngle % 360);
+      const distanceFromFront = Math.min(normalizedAngle, 360 - normalizedAngle);
+      return Math.max(0, 1 - (distanceFromFront / 90));
+    });
+
+    const opacityTransforms = [
+      opacityTransform0, opacityTransform1, opacityTransform2, opacityTransform3,
+      opacityTransform4, opacityTransform5, opacityTransform6, opacityTransform7,
+      opacityTransform8, opacityTransform9, opacityTransform10, opacityTransform11,
+      opacityTransform12, opacityTransform13, opacityTransform14, opacityTransform15
+    ];
 
     // Create rendered icons the same way as icon-cloud
     const renderedIcons = useMemo(() => {
@@ -276,7 +401,7 @@ const Carousel = memo(
           {skills.map((skill, i) => {
             const renderedIcon = renderedIcons[skill.slug];
             const baseRotationAngle = i * (360 / faceCount);
-            const opacityTransform = opacityTransforms[i];
+            const opacityTransform = opacityTransforms[i] || opacityTransforms[0]; // Fallback to first transform if index is out of bounds
             
             return (
                <motion.div
