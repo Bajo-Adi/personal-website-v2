@@ -32,12 +32,10 @@ const Contact = () => {
           </Button>
         </div>
         <span className="font-body mt-8 text-gray-300">
-          Now that you&apos;ve had a chance to learn a bit about me and my
-          journey, I&apos;d love the opportunity to get to know you. Whether
-          you&apos;re looking to collaborate on a project, share ideas, or
-          explore potential opportunities, I&apos;m excited to hear your story
-          and see how we can work together. Feel free to reach out—let&apos;s
-          create something meaningful!
+        Every journey offers something new to learn, and I’m always curious 
+        to hear different perspectives. If you’d like to collaborate on a project,
+         share ideas, or explore new opportunities, 
+         I’d be glad to connect and see where our paths align.
         </span>
         <span className="font-body mt-8 text-gray-300">
           Email me at{" "}
