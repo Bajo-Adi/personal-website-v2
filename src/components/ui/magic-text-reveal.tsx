@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef, useState, useEffect, useCallback, useMemo } from 'react';
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 interface Particle {
   x: number;
@@ -405,7 +405,7 @@ export const MagicTextReveal: React.FC<MagicTextRevealProps> = ({
 
   // Update showText based on scroll progress
   useEffect(() => {
-    const unsubscribe = (scrollProgress || scrollYProgress).on("change", (latest) => {
+    const unsubscribe = (scrollProgress || scrollYProgress).on("change", (latest: number) => {
       setShowText(latest > 0.5); // Show text when scroll progress is more than 50%
     });
     return unsubscribe;
@@ -470,7 +470,7 @@ export const MagicTextReveal: React.FC<MagicTextRevealProps> = ({
         }}
       >
         {/* Animated text that appears on scroll */}
-        <div
+        <motion.div
           className="absolute z-10 transition-opacity duration-200"
           style={{
             color,
@@ -487,10 +487,10 @@ export const MagicTextReveal: React.FC<MagicTextRevealProps> = ({
           }}
         >
           {text}
-        </div>
+        </motion.div>
         
         {/* Canvas for particle system */}
-        <canvas
+        <motion.canvas
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
           style={{ opacity: particleOpacity }}
