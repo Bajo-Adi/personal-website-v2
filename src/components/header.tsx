@@ -17,16 +17,50 @@ import { useState, useEffect } from "react";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open and restore on close
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      if (isMobileMenuOpen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
+    if (typeof window === 'undefined') return;
+
+    const html = document.documentElement;
+    const body = document.body as HTMLBodyElement & { __scrollY?: number };
+
+    if (isMobileMenuOpen) {
+      // Store current scroll position
+      body.__scrollY = window.scrollY;
+      // Lock scrolling
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.top = `-${body.__scrollY}px`;
+      body.style.width = '100%';
+    } else {
+      // Restore scrolling
+      html.style.overflow = '';
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.top = '';
+      body.style.width = '';
+      // Restore scroll position
+      if (body.__scrollY !== undefined) {
+        window.scrollTo(0, body.__scrollY);
+        delete body.__scrollY;
       }
     }
   }, [isMobileMenuOpen]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (typeof window === 'undefined') return;
+      const html = document.documentElement;
+      const body = document.body;
+      html.style.overflow = '';
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.top = '';
+      body.style.width = '';
+    };
+  }, []);
   
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(`#${sectionId}`) as HTMLElement;
