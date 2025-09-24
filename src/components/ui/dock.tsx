@@ -110,7 +110,7 @@ function Dock({
           mouseX.set(Infinity);
         }}
         className={cn(
-          'mx-auto flex w-fit gap-8 rounded-2xl bg-neutral-950/80 backdrop-blur-sm px-6 py-4 border border-white/10',
+          'mx-auto flex w-fit gap-8 rounded-2xl bg-neutral-950/80 backdrop-blur-sm px-8 py-3 border border-white/10 min-w-[450px] lg:min-w-[550px] xl:min-w-[650px]',
           className
         )}
         style={{ height: panelHeight }}
@@ -140,7 +140,7 @@ function DockItem({ children, className, onClick }: DockItemProps) {
   const widthTransform = useTransform(
     mouseDistance,
     [-distance, 0, distance],
-    [40, magnification, 40]
+    [50, magnification, 50]
   );
 
   const width = useSpring(widthTransform, spring);
@@ -191,7 +191,7 @@ function DockLabel({ children, className, alwaysVisible = false, ...rest }: Dock
     return (
       <motion.div
         className={cn(
-          'text-xs text-white text-center font-medium',
+          'text-xs text-white text-center font-medium whitespace-nowrap',
           className
         )}
       >
@@ -209,7 +209,7 @@ function DockLabel({ children, className, alwaysVisible = false, ...rest }: Dock
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            'absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-white/20 bg-neutral-900 px-2 py-0.5 text-xs text-white',
+            'absolute -top-6 left-1/2 w-fit whitespace-nowrap rounded-md border border-white/20 bg-neutral-900 px-2 py-0.5 text-xs text-white',
             className
           )}
           role='tooltip'
