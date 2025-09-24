@@ -49,15 +49,15 @@ const Header = () => {
       isInternal: true,
     },
     {
-      title: "Skills",
-      icon: <Code className="h-6 w-6 text-white" />,
-      onClick: () => scrollToSection("skills"),
-      isInternal: true,
-    },
-    {
       title: "Resume",
       icon: <FileText className="h-6 w-6 text-white" />,
       onClick: () => scrollToSection("resume"),
+      isInternal: true,
+    },
+    {
+      title: "Skills",
+      icon: <Code className="h-6 w-6 text-white" />,
+      onClick: () => scrollToSection("skills"),
       isInternal: true,
     },
     {
@@ -93,7 +93,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="z-20 w-full sticky top-0 flex items-center justify-between px-5 h-20 font-header bg-neutral-950/80 backdrop-blur-sm shadow-lg border-b border-white/10">
+    <div className="z-20 w-full sticky top-0 flex items-center justify-between px-5 h-16 sm:h-18 lg:h-20 font-header bg-neutral-950/80 backdrop-blur-sm shadow-lg border-b border-white/10">
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center justify-center flex-1">
         <Dock className="items-center">
@@ -125,7 +125,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-neutral-950/95 backdrop-blur-sm z-10">
+        <div className="lg:hidden fixed inset-0 top-16 sm:top-18 lg:top-20 bg-neutral-950/95 backdrop-blur-sm z-10">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navigationItems.map((item, idx) => (
               <button

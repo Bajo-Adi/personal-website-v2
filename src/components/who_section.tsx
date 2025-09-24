@@ -38,9 +38,9 @@ const WhoAmI = () => {
   const words = text.split(" ");
 
   return (
-    <div id="about-me" className="bg-black pt-20">
+    <div id="about-me" className="bg-black pt-24 sm:pt-28 lg:pt-32">
       <div ref={targetRef} className="relative z-0 h-[200vh]">
-        <div className="sticky top-20 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center h-[80vh] max-w-7xl bg-transparent px-4 py-4 lg:px-[1rem] lg:py-[2rem] space-y-6 lg:space-y-0 lg:space-x-12">
+        <div className="sticky top-24 sm:top-28 lg:top-32 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center h-[80vh] max-w-7xl bg-transparent px-4 py-4 lg:px-[1rem] lg:py-[2rem] space-y-6 lg:space-y-0 lg:space-x-12">
           <div className="flex-1 max-w-2xl">
             <p className="flex flex-wrap p-2 font-header text-2xl sm:text-3xl lg:text-4xl font-bold text-black/5 dark:text-white/20 md:p-4 lg:p-6">
               {words.map((word, i) => {

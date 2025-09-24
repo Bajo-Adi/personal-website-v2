@@ -359,7 +359,7 @@ export default function ProjectsHorizontal() {
 
   return (
     <div
-      className="min-h-screen mx-auto relative bg-black overflow-x-hidden"
+      className="min-h-[120vh] mx-auto relative bg-black overflow-x-hidden"
       ref={projectsRef}
     >
       {/* Background Effects */}
@@ -462,7 +462,7 @@ export default function ProjectsHorizontal() {
       </article>
 
       {/* Horizontal Scroll Container */}
-      <div className="relative z-10 px-8 pb-12">
+      <div className="relative z-10 px-8 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
         <div className="relative">
           {/* Navigation Buttons */}
           <button
@@ -494,7 +494,7 @@ export default function ProjectsHorizontal() {
               className="overflow-x-auto scrollbar-hide"
               onScroll={checkScrollButtons}
             >
-              <div className="flex gap-4 sm:p-6 pb-4" style={{ width: 'max-content' }}>
+              <div className="flex gap-4 sm:p-6 pb-16 sm:pb-20 lg:pb-24" style={{ width: 'max-content' }}>
                 {currentData.map((item: any, index: number) => (
                 <TimelineContent
                   key={item.name}

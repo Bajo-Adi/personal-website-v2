@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Resume = () => {
   return (
-    <div id="resume" className="mt-8 flex flex-col relative items-center p-1 justify-start min-h-[100vh] bg-neutral-950">
+    <div id="resume" className="pt-16 pb-4 sm:pt-20 sm:pb-6 lg:pt-24 lg:pb-8 flex flex-col relative items-center p-1 justify-start min-h-[100vh] bg-neutral-950">
       <div className="flex-col font-body flex px-4 sm:px-5 text-lg max-w-6xl mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
