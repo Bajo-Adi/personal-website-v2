@@ -6,6 +6,20 @@ import { ChevronDown } from "lucide-react";
 const Homepage = () => {
   const [menuValue, setMenuValue] = useState("Initial");
 
+  // Ensure touch scrolling (pan-y) is enabled on mobile browsers
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.touchAction;
+    const prevBody = body.style.touchAction;
+    html.style.touchAction = "pan-y";
+    body.style.touchAction = "pan-y";
+    return () => {
+      html.style.touchAction = prevHtml;
+      body.style.touchAction = prevBody;
+    };
+  }, []);
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-neutral-950 relative overflow-hidden touch-pan-y">
