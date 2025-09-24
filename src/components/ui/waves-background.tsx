@@ -305,7 +305,7 @@ export function Waves({
       updateMouse(e.pageX, e.pageY)
     }
     function onTouchMove(e: TouchEvent) {
-      e.preventDefault()
+      // Do not call preventDefault so page can scroll
       const touch = e.touches[0]
       updateMouse(touch.clientX, touch.clientY)
     }
@@ -328,12 +328,13 @@ export function Waves({
     requestAnimationFrame(tick)
     window.addEventListener("resize", onResize)
     window.addEventListener("mousemove", onMouseMove)
-    window.addEventListener("touchmove", onTouchMove, { passive: false })
+    // Attach touchmove to the container element and mark as passive to not block scrolling
+    container.addEventListener("touchmove", onTouchMove as any, { passive: true })
 
     return () => {
       window.removeEventListener("resize", onResize)
       window.removeEventListener("mousemove", onMouseMove)
-      window.removeEventListener("touchmove", onTouchMove)
+      container.removeEventListener("touchmove", onTouchMove as any)
     }
   }, [
     lineColor,
