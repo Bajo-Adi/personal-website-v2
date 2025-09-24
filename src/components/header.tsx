@@ -20,11 +20,11 @@ const Header = () => {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (typeof document !== 'undefined') {
-      const previous = document.body.style.overflow;
-      document.body.style.overflow = isMobileMenuOpen ? 'hidden' : previous || '';
-      return () => {
-        document.body.style.overflow = previous;
-      };
+      if (isMobileMenuOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     }
   }, [isMobileMenuOpen]);
   
@@ -147,8 +147,8 @@ const Header = () => {
           >
             <X size={24} />
           </button>
-          <div className="grid place-items-center min-h-[100dvh] p-6">
-            <div className="w-full max-w-sm flex flex-col items-stretch gap-4">
+          <div className="flex flex-col items-center justify-center min-h-[100dvh] p-6">
+            <div className="w-full max-w-sm flex flex-col gap-4">
               {navigationItems.map((item, idx) => (
                 <button
                   key={idx}
@@ -159,7 +159,7 @@ const Header = () => {
                   className="w-full flex items-center justify-center gap-3 text-white hover:text-blue-400 transition-colors text-xl py-4 border border-white/10 rounded-xl"
                 >
                   {item.icon}
-                  <span>{item.title}</span>
+                  <span className="text-center">{item.title}</span>
                 </button>
               ))}
             </div>
