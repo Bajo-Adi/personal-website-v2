@@ -358,7 +358,7 @@ function ThreeDPhotoCarousel({ skills }: { skills?: { slug: string; name: string
         )}
       </AnimatePresence>
 
-      <div className="relative h-[300px] w-full overflow-hidden">
+      <div className="relative h-[40vh] sm:h-[45vh] lg:h-[50vh] w-full overflow-hidden">
         <Carousel
           handleClick={handleClick}
           controls={controls}

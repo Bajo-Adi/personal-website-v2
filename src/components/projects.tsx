@@ -3,7 +3,7 @@ import ProjectsHorizontal from "./ui/projects-horizontal";
 
 const Projects = () => {
   return (
-    <div id="projects" className="bg-neutral-950 pt-16 pb-32 sm:pt-20 sm:pb-40 lg:pt-24 lg:pb-48">
+    <div id="projects" className="bg-neutral-950 pt-8 pb-2 sm:pt-12 sm:pb-6 lg:pt-16 lg:pb-10">
       <ProjectsHorizontal />
     </div>
   );

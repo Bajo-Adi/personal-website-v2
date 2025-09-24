@@ -38,9 +38,10 @@ const WhoAmI = () => {
   const words = text.split(" ");
 
   return (
-    <div id="about-me" className="bg-black pt-24 sm:pt-28 lg:pt-32">
-      <div ref={targetRef} className="relative z-0 h-[200vh]">
-        <div className="sticky top-24 sm:top-28 lg:top-32 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center h-[80vh] max-w-7xl bg-transparent px-4 py-4 lg:px-[1rem] lg:py-[2rem] space-y-6 lg:space-y-0 lg:space-x-12">
+    <div id="about-me" className="bg-black pt-20">
+      <div ref={targetRef} className="relative z-0 h-[120vh]">
+        {/* Sticky text content for all screen sizes */}
+        <div className="sticky top-20 mx-auto flex flex-col lg:flex-row items-center lg:items-center justify-center h-[80vh] lg:h-[80vh] max-w-7xl bg-transparent px-4 pt-4 pb-2 lg:px-[1rem] lg:py-[2rem] space-y-6 lg:space-y-0 lg:space-x-12">
           <div className="flex-1 max-w-2xl">
             <p className="flex flex-wrap p-2 font-header text-2xl sm:text-3xl lg:text-4xl font-bold text-black/5 dark:text-white/20 md:p-4 lg:p-6">
               {words.map((word, i) => {
@@ -103,13 +104,37 @@ const WhoAmI = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 max-w-md relative flex items-center justify-center">
+          {/* Video - only visible on large screens */}
+          <div className="hidden lg:flex flex-1 max-w-md lg:max-w-lg relative items-center justify-center">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline
               className="w-full h-auto rounded-lg shadow-2xl relative z-10"
+              style={{ 
+                position: 'relative',
+                transform: 'none',
+                willChange: 'auto'
+              }}
+            >
+              <source src="/about-me-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+      
+      {/* Video section for small and medium screens - appears after sticky section */}
+      <div className="lg:hidden bg-black">
+        <div className="mx-auto max-w-7xl px-4 pt-2 pb-16">
+          <div className="flex justify-center">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full max-w-md h-auto max-h-[40vh] sm:max-h-[45vh] rounded-lg shadow-2xl"
               style={{ 
                 position: 'relative',
                 transform: 'none',

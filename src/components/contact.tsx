@@ -14,10 +14,11 @@ import {
 
 const Contact = () => {
   return (
-    <div
-      id="contact"
-      className="relative flex h-[100vh] w-full flex-col items-center justify-center rounded-lg border bg-neutral-950 border-white/20 md:shadow-xl"
-    >
+    <div className="pt-16 sm:pt-20 lg:pt-24">
+      <div
+        id="contact"
+        className="relative flex h-[100vh] w-full flex-col items-center justify-center rounded-lg border bg-neutral-950 border-white/20 md:shadow-xl"
+      >
       <div className="max-w-4xl p-5 flex flex-col">
         <div className="flex justify-between items-center mb-4">
           <span className="pointer-events-none z-10 whitespace-pre-wrap font-header text-start text-4xl font-bold leading-none tracking-tighter text-white">
@@ -86,6 +87,7 @@ const Contact = () => {
         color="rgb(255, 255, 255)"
         maxOpacity={0.1}
       />
+      </div>
     </div>
   );
 };

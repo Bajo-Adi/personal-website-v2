@@ -25,7 +25,17 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[300px] sm:w-[350px] lg:w-[400px] h-[500px] sm:h-[600px] lg:h-[650px] cursor-pointer">
+    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[300px] sm:w-[350px] lg:w-[400px] min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] cursor-pointer">
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={3}
+        variant="white"
+        className="z-20"
+      />
       <div 
         className={cn(
           "relative h-full transition-transform duration-700 transform-style-preserve-3d",
@@ -33,16 +43,6 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
         )}
         onClick={() => setIsFlipped(!isFlipped)}
       >
-        <GlowingEffect
-          spread={40}
-          glow={true}
-          disabled={false}
-          proximity={64}
-          inactiveZone={0.01}
-          borderWidth={3}
-          variant="white"
-          className="z-20"
-        />
         
         {/* Front side - Image */}
         <div className="absolute inset-0 backface-hidden">
@@ -68,7 +68,7 @@ const FlipCard = ({ name, description, href, cta, imageSrc = "/logo.png", featur
               >
                 {name}
               </GradientText>
-              <p className="text-sm text-gray-300 leading-relaxed h-[7.2rem] overflow-hidden">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 {description}
               </p>
             </div>
@@ -359,7 +359,7 @@ export default function ProjectsHorizontal() {
 
   return (
     <div
-      className="min-h-[120vh] mx-auto relative bg-black overflow-x-hidden"
+      className="min-h-screen mx-auto relative bg-black overflow-x-hidden overflow-y-visible"
       ref={projectsRef}
     >
       {/* Background Effects */}
@@ -462,7 +462,7 @@ export default function ProjectsHorizontal() {
       </article>
 
       {/* Horizontal Scroll Container */}
-      <div className="relative z-10 px-8 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
+      <div className="relative z-10 px-8 pt-16 pb-[10vh] sm:pt-20 sm:pb-[12vh] lg:pt-24 lg:pb-[15vh] overflow-y-visible">
         <div className="relative">
           {/* Navigation Buttons */}
           <button
@@ -488,13 +488,13 @@ export default function ProjectsHorizontal() {
           </button>
 
           {/* Scroll Container */}
-          <div className="overflow-hidden mx-16">
+          <div className="mx-16">
             <div 
               ref={scrollContainerRef}
-              className="overflow-x-auto scrollbar-hide"
+              className="overflow-x-auto scrollbar-hide overflow-y-visible"
               onScroll={checkScrollButtons}
             >
-              <div className="flex gap-4 sm:p-6 pb-16 sm:pb-20 lg:pb-24" style={{ width: 'max-content' }}>
+              <div className="flex gap-4 sm:p-6 pb-[8vh] sm:pb-[10vh] lg:pb-[12vh]" style={{ width: 'max-content' }}>
                 {currentData.map((item: any, index: number) => (
                 <TimelineContent
                   key={item.name}
@@ -514,18 +514,18 @@ export default function ProjectsHorizontal() {
                       features={item.features}
                     />
                   ) : (
-                    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[300px] sm:w-[350px] lg:w-[400px] h-[500px] sm:h-[600px] lg:h-[650px]">
+                    <Card className="relative text-white border-neutral-800 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 w-[300px] sm:w-[350px] lg:w-[400px] min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
+                      <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
+                        borderWidth={3}
+                        variant="white"
+                        className="z-20"
+                      />
                       <div className="relative h-full p-4 sm:p-6 flex flex-col">
-                        <GlowingEffect
-                          spread={40}
-                          glow={true}
-                          disabled={false}
-                          proximity={64}
-                          inactiveZone={0.01}
-                          borderWidth={3}
-                          variant="white"
-                          className="z-20"
-                        />
                         
                         <div className="space-y-6 flex-1">
                           <div className="space-y-4">
@@ -546,7 +546,7 @@ export default function ProjectsHorizontal() {
                                 {item.date}
                               </h4>
                             )}
-                            <p className={`text-sm text-gray-300 leading-relaxed ${isYearly ? '' : 'h-[7.2rem] overflow-hidden'}`}>
+                            <p className="text-sm text-gray-300 leading-relaxed">
                               {item.description}
                             </p>
                           </div>

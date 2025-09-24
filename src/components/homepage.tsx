@@ -8,7 +8,7 @@ const Homepage = () => {
 
 
   return (
-    <div className="flex h-[90vh] w-full flex-col items-center justify-center bg-neutral-950 relative overflow-hidden">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-neutral-950 relative overflow-hidden">
       <span className="z-10 whitespace-pre-wrap text-center text-5xl font-bold font-header tracking-tighter text-white">
         Hey, it&apos;s Aditya!
       </span>
