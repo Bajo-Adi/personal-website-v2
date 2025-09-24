@@ -8,12 +8,12 @@ const Homepage = () => {
 
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-neutral-950 relative overflow-hidden">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-neutral-950 relative overflow-hidden touch-pan-y">
       <span className="z-10 whitespace-pre-wrap text-center text-5xl font-bold font-header tracking-tighter text-white">
         Hey, it&apos;s Aditya!
       </span>
       
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <Waves
           lineColor="rgba(200, 200, 200, 0.4)"
           backgroundColor="transparent"

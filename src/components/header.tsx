@@ -62,13 +62,17 @@ const Header = () => {
     };
   }, []);
   
+  const scrollWithOffset = (element: HTMLElement) => {
+    const header = document.querySelector('div.sticky.top-0') as HTMLElement | null;
+    const offset = header ? header.offsetHeight : 0;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(`#${sectionId}`) as HTMLElement;
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop,
-        behavior: "smooth",
-      });
+      scrollWithOffset(element);
     }
   };
 
@@ -187,8 +191,10 @@ const Header = () => {
                 <button
                   key={idx}
                   onClick={() => {
-                    item.onClick();
                     setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      item.onClick();
+                    }, 50);
                   }}
                   className="w-full flex items-center justify-center gap-3 text-white hover:text-blue-400 transition-colors text-xl py-4 border border-white/10 rounded-xl"
                 >
